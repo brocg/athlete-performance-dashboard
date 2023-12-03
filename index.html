@@ -7,9 +7,19 @@
 
       document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
+        
         var calendar = new FullCalendar.Calendar(calendarEl, {
-          initialView: 'dayGridMonth'
+          initialView: 'dayGridMonth',
+          events: [
+            {
+              title: 'My Event', // Event Title
+              start: '2023-12-03', // Event Start Date
+              // You can add more properties like end, url, etc.
+            }
+          ]
+          // ... other calendar options ...
         });
+        
         calendar.render();
       });
 
@@ -18,4 +28,5 @@
   <body>
     <div id='calendar'></div>
   </body>
+
 </html>
