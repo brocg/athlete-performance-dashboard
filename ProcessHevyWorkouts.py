@@ -86,6 +86,8 @@ for i, v in enumerate(volumes):
 plt.tight_layout()
 plt.show()
 
+fig.savefig('assets/workout-summary.png')
+
 # COMMAND ----------
 
 
