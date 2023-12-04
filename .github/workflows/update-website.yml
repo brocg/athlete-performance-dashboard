@@ -1,0 +1,21 @@
+name: Update Website
+
+on:
+  push:
+    paths:
+      - 'assets/workout-summary.png'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out the repo
+      uses: actions/checkout@v2
+
+    - name: Commit and push if there are changes
+      run: |
+        git config --global user.email "gnbroc@outlook.com"
+        git config --global user.name "brocg"
+        git add -A
+        git commit -m "Update workout summary image" -a || echo "No changes to commit"
+        git push
